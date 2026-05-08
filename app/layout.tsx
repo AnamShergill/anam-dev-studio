@@ -9,6 +9,11 @@ export const metadata: Metadata = {
   description: "Modern developer portfolio showcasing web development projects, skills in React, Next.js, TypeScript, and AI-powered applications. Started coding in 2023.",
   keywords: ["web developer", "frontend developer", "React", "Next.js", "TypeScript", "AI", "portfolio", "Anam Shergill"],
   authors: [{ name: "Anam Zeeshan Shergill" }],
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+  },
   openGraph: {
     title: "Anam Zeeshan Shergill | Frontend & AI Web Developer",
     description: "Building modern, fast and SEO-focused web experiences",

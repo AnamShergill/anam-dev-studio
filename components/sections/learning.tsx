@@ -12,12 +12,12 @@ export default function Learning() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="learning" className="py-20 relative">
+    <section id="learning" className="py-12 sm:py-16 md:py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div ref={ref} className="text-center mb-16">
+        <div ref={ref} className="text-center mb-12 sm:mb-16">
           <AnimatedHeading 
             highlight="Learning"
-            className="text-4xl md:text-5xl font-bold text-white mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4"
           >
             Currently Learning
           </AnimatedHeading>
@@ -27,13 +27,13 @@ export default function Learning() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-gray-400 text-lg max-w-2xl mx-auto"
+            className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto"
           >
             Always growing, always learning new technologies and skills
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {learning.map((item, index) => {
             const IconComponent = (Icons as any)[item.icon] || Icons.Code
 
@@ -46,16 +46,31 @@ export default function Learning() {
                 whileHover={{ scale: 1.05, y: -5 }}
               >
                 <Card className="h-full hover:border-blue-500 transition-all group relative overflow-hidden">
-                  {/* Glowing Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/10 group-hover:to-purple-500/10 transition-all" />
+                  {/* Animated Gradient Background */}
+                  <motion.div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    animate={{
+                      background: [
+                        "linear-gradient(45deg, rgba(59, 130, 246, 0.08), rgba(147, 51, 234, 0.08))",
+                        "linear-gradient(90deg, rgba(147, 51, 234, 0.08), rgba(236, 72, 153, 0.08))",
+                        "linear-gradient(135deg, rgba(236, 72, 153, 0.08), rgba(59, 130, 246, 0.08))",
+                        "linear-gradient(45deg, rgba(59, 130, 246, 0.08), rgba(147, 51, 234, 0.08))",
+                      ],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                  />
                   
-                  <CardContent className="p-6 relative">
-                    <div className="flex items-start gap-4">
-                      <div className="p-3 rounded-lg bg-blue-500/10 group-hover:bg-blue-500/20 transition-colors">
-                        <IconComponent className="h-6 w-6 text-blue-500" />
+                  <CardContent className="p-4 sm:p-6 relative z-10">
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      <div className="p-2 sm:p-3 rounded-lg bg-blue-500/10 group-hover:bg-blue-500/20 transition-colors flex-shrink-0">
+                        <IconComponent className="h-5 w-5 sm:h-6 sm:w-6 text-blue-500" />
                       </div>
-                      <div className="flex-1">
-                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-blue-500 transition-colors">
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-blue-500 transition-colors">
                           {item.title}
                         </h3>
                         <p className="text-gray-400 text-sm">

@@ -22,8 +22,8 @@ export default function Footer() {
 
   return (
     <footer className="relative border-t border-gray-800 bg-gray-950/50 backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
           {/* Brand */}
           <div>
             <motion.div
@@ -110,13 +110,13 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-gray-800">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm text-center md:text-left">
+        <div className="pt-6 sm:pt-8 border-t border-gray-800">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
+            <p className="text-gray-400 text-xs sm:text-sm text-center md:text-left">
               © {currentYear} Anam Zeeshan Shergill. All rights reserved.
             </p>
-            <p className="text-gray-400 text-sm flex items-center gap-2">
-              Made with <Heart className="h-4 w-4 text-red-500 fill-red-500" /> using Next.js & Tailwind CSS
+            <p className="text-gray-400 text-xs sm:text-sm flex items-center gap-2">
+              Made with <Heart className="h-3 w-3 sm:h-4 sm:w-4 text-red-500 fill-red-500" /> using Next.js & Tailwind CSS
             </p>
           </div>
         </div>
@@ -130,10 +130,10 @@ export default function Footer() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed bottom-8 right-8 p-3 rounded-full bg-blue-600 text-white shadow-lg hover:bg-blue-700 transition-colors z-40"
+        className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 p-2.5 sm:p-3 rounded-full bg-blue-600 text-white shadow-lg hover:bg-blue-700 transition-colors z-40"
       >
         <svg
-          className="h-6 w-6"
+          className="h-5 w-5 sm:h-6 sm:w-6"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

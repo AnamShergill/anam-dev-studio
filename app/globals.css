@@ -10,16 +10,37 @@
     color: white;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px; /* Prevents zoom on input focus in iOS */
+  }
+  
+  /* Improve touch targets */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
   }
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
+}
+
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
 }
 
 ::-webkit-scrollbar-track {
@@ -39,4 +60,107 @@
 ::selection {
   background-color: #3b82f6;
   color: white;
+}
+
+/* Prevent horizontal scroll on mobile */
+* {
+  max-width: 100%;
+}
+
+/* Smooth animations on mobile */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Premium Shimmer Animation - EXAGGERATED FOR VISIBILITY */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-20deg);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 4s infinite;
+}
+
+/* Shimmer for cards - HIGHLY VISIBLE */
+@keyframes shimmer-card {
+  0% {
+    transform: translateX(-150%) translateY(-150%) rotate(30deg);
+  }
+  100% {
+    transform: translateX(150%) translateY(150%) rotate(30deg);
+  }
+}
+
+.animate-shimmer-card {
+  animation: shimmer-card 4s infinite;
+}
+
+/* Button shimmer - EXTREMELY VISIBLE FOR DEBUGGING */
+@keyframes button-shimmer {
+  0% {
+    left: -150%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+.button-shimmer {
+  position: absolute;
+  top: -50%;
+  left: -150%;
+  width: 150px;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.9),
+    rgba(59, 130, 246, 0.8),
+    rgba(255, 255, 255, 0.9),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: button-shimmer 4s infinite;
+  pointer-events: none;
+  z-index: 50;
+  filter: blur(2px);
+}
+
+/* Screenshot fade-in animation */
+@keyframes screenshot-fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.screenshot-loaded {
+  animation: screenshot-fade-in 0.6s ease-out forwards;
+}
+
+/* Glow pulse animation */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
+  }
+}
+
+.glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
 }

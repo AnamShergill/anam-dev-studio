@@ -75,7 +75,7 @@ export default function Navbar() {
                 e.preventDefault()
                 scrollToSection("#home")
               }}
-              className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent"
+              className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent"
             >
               Anam Shergill
             </a>

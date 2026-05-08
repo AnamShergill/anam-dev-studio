@@ -10,12 +10,12 @@ export default function Experience() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="experience" className="py-20 relative">
+    <section id="experience" className="py-12 sm:py-16 md:py-20 relative">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div ref={ref} className="text-center mb-16">
+        <div ref={ref} className="text-center mb-12 sm:mb-16">
           <AnimatedHeading 
             highlight="Journey"
-            className="text-4xl md:text-5xl font-bold text-white mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4"
           >
             My Journey
           </AnimatedHeading>
@@ -49,12 +49,32 @@ export default function Experience() {
               >
                 {/* Content */}
                 <div className={`w-full md:w-5/12 ${index % 2 === 0 ? "md:text-right" : "md:text-left"}`}>
-                  <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-blue-500 transition-all group">
-                    <div className="text-blue-500 font-bold text-lg mb-2">{item.year}</div>
-                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-500 transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-400">{item.description}</p>
+                  <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-blue-500 transition-all group relative overflow-hidden">
+                    {/* Animated gradient background */}
+                    <motion.div
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                      animate={{
+                        background: [
+                          "linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(147, 51, 234, 0.05))",
+                          "linear-gradient(225deg, rgba(147, 51, 234, 0.05), rgba(236, 72, 153, 0.05))",
+                          "linear-gradient(315deg, rgba(236, 72, 153, 0.05), rgba(59, 130, 246, 0.05))",
+                          "linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(147, 51, 234, 0.05))",
+                        ],
+                      }}
+                      transition={{
+                        duration: 4,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
+                    />
+                    
+                    <div className="relative z-10">
+                      <div className="text-blue-500 font-bold text-lg mb-2">{item.year}</div>
+                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-500 transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-400">{item.description}</p>
+                    </div>
                   </div>
                 </div>
 
