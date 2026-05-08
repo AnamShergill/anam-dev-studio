@@ -46,7 +46,7 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative w-full max-w-lg mx-auto h-[450px] sm:h-[500px] md:h-[550px]">
+            <div className="relative w-full max-w-lg mx-auto h-[350px] sm:h-[450px] md:h-[500px] lg:h-[550px]">
               {/* Central Glowing Orb */}
               <motion.div
                 animate={{
@@ -58,7 +58,7 @@ export default function About() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-3xl"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-3xl"
               />
 
               {/* Floating Code Snippet Card - Top Center */}
@@ -72,7 +72,7 @@ export default function About() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute top-4 left-1/2 -translate-x-1/2 w-60 sm:w-64 md:w-72 bg-gray-900/90 backdrop-blur-xl border border-gray-700/50 rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-2xl z-10"
+                className="absolute top-2 sm:top-4 left-1/2 -translate-x-1/2 w-52 sm:w-60 md:w-64 lg:w-72 bg-gray-900/90 backdrop-blur-xl border border-gray-700/50 rounded-xl sm:rounded-2xl p-2.5 sm:p-3 md:p-4 shadow-2xl z-10"
               >
                 {/* Terminal Header */}
                 <div className="flex items-center gap-2 mb-2 sm:mb-3 pb-2 border-b border-gray-700/50">
@@ -107,7 +107,7 @@ export default function About() {
                   ease: "easeInOut",
                   delay: 0.5,
                 }}
-                className="absolute bottom-8 left-4 sm:left-8 w-52 sm:w-56 md:w-60 bg-gray-900/90 backdrop-blur-xl border border-gray-700/50 rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-2xl z-10"
+                className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-2 sm:left-4 md:left-8 w-44 sm:w-52 md:w-56 lg:w-60 bg-gray-900/90 backdrop-blur-xl border border-gray-700/50 rounded-xl sm:rounded-2xl p-2.5 sm:p-3 md:p-4 shadow-2xl z-10"
               >
                 <div className="flex items-center gap-2 mb-2 sm:mb-3">
                   <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-500 animate-pulse" />
@@ -148,7 +148,7 @@ export default function About() {
                   ease: "easeInOut",
                   delay: 1,
                 }}
-                className="absolute bottom-8 right-4 sm:right-8 w-60 sm:w-64 md:w-72 bg-gray-900/90 backdrop-blur-xl border border-gray-700/50 rounded-xl sm:rounded-2xl p-2.5 sm:p-3 shadow-2xl z-10"
+                className="absolute bottom-4 sm:bottom-6 md:bottom-8 right-2 sm:right-4 md:right-8 w-52 sm:w-60 md:w-64 lg:w-72 bg-gray-900/90 backdrop-blur-xl border border-gray-700/50 rounded-xl sm:rounded-2xl p-2 sm:p-2.5 md:p-3 shadow-2xl z-10"
               >
                 {/* Terminal Header */}
                 <div className="flex items-center gap-2 mb-1.5 sm:mb-2">
@@ -184,7 +184,7 @@ export default function About() {
                   ease: "easeInOut",
                   delay: 0.3,
                 }}
-                className="absolute top-24 sm:top-28 left-4 sm:left-8 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-xl border border-purple-500/30 rounded-full shadow-lg z-10"
+                className="absolute top-16 sm:top-20 md:top-24 lg:top-28 left-2 sm:left-4 md:left-8 px-2.5 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-xl border border-purple-500/30 rounded-full shadow-lg z-10"
               >
                 <div className="flex items-center gap-1.5 sm:gap-2">
                   <motion.span
@@ -214,7 +214,7 @@ export default function About() {
                   ease: "easeInOut",
                   delay: 0.8,
                 }}
-                className="absolute top-24 sm:top-28 right-4 sm:right-8 w-44 sm:w-48 md:w-52 bg-gray-900/90 backdrop-blur-xl border border-gray-700/50 rounded-xl sm:rounded-2xl p-3 sm:p-3.5 shadow-2xl z-10"
+                className="absolute top-16 sm:top-20 md:top-24 lg:top-28 right-2 sm:right-4 md:right-8 w-40 sm:w-44 md:w-48 lg:w-52 bg-gray-900/90 backdrop-blur-xl border border-gray-700/50 rounded-xl sm:rounded-2xl p-2.5 sm:p-3 md:p-3.5 shadow-2xl z-10"
               >
                 <div className="space-y-1.5 sm:space-y-2">
                   <div className="flex items-center justify-between">
