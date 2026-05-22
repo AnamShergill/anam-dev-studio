@@ -98,16 +98,12 @@ export default function Navbar() {
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-1">
               {navItems.map((item, index) => (
-                <motion.a
+                <motion.button
                   key={item.name}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 * index }}
-                  href={item.href}
-                  onClick={(e) => {
-                    e.preventDefault()
-                    scrollToSection(item.href)
-                  }}
+                  onClick={() => scrollToSection(item.href)}
                   className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
                     activeSection === item.href.substring(1)
                       ? "text-blue-500 bg-blue-500/10"
@@ -115,7 +111,7 @@ export default function Navbar() {
                   }`}
                 >
                   {item.name}
-                </motion.a>
+                </motion.button>
               ))}
             </div>
           </div>
