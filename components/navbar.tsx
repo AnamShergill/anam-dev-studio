@@ -156,21 +156,17 @@ export default function Navbar() {
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
-                <a
+                <button
                   key={item.name}
-                  href={item.href}
-                  onClick={(e) => {
-                    e.preventDefault()
-                    scrollToSection(item.href)
-                  }}
-                  className={`block px-3 py-2 rounded-lg text-base font-medium transition-all ${
+                  onClick={() => scrollToSection(item.href)}
+                  className={`w-full text-left block px-3 py-2 rounded-lg text-base font-medium transition-all ${
                     activeSection === item.href.substring(1)
                       ? "text-blue-500 bg-blue-500/10"
                       : "text-gray-300 hover:text-white hover:bg-gray-800"
                   }`}
                 >
                   {item.name}
-                </a>
+                </button>
               ))}
             </div>
           </motion.div>
