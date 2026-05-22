@@ -33,13 +33,10 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-green-500/10 border border-green-500/20"
+              className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20"
             >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-              </span>
-              <span className="text-xs sm:text-sm text-green-400 font-medium">{personalInfo.availability}</span>
+              <span className="text-xl">✨</span>
+              <span className="text-xs sm:text-sm text-blue-400 font-medium">Web Developer & AI Solutions</span>
             </motion.div>
 
             {/* Main Heading */}
@@ -99,22 +96,13 @@ export default function Hero() {
                 </span>
               </motion.h1>
 
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-300"
-              >
-                {personalInfo.role}
-              </motion.h2>
-
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="text-base sm:text-lg text-gray-400 max-w-xl leading-relaxed"
+                transition={{ delay: 0.6 }}
+                className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl leading-relaxed"
               >
-                {personalInfo.description}
+                Founder of <span className="font-semibold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Anam Dev Studio</span> — building modern websites, AI solutions, and digital experiences for growing businesses.
               </motion.p>
             </div>
 
@@ -122,7 +110,7 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
+              transition={{ delay: 0.7 }}
               className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4"
             >
               <Button
@@ -136,19 +124,10 @@ export default function Hero() {
               <Button
                 size="lg"
                 variant="outline"
-                onClick={() => window.open(personalInfo.resume, "_blank")}
-                className="w-full sm:w-auto"
-              >
-                <Download className="mr-2 h-4 w-4" />
-                Download Resume
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
                 onClick={() => scrollToSection("contact")}
                 className="w-full sm:w-auto"
               >
-                Contact Me
+                Let's Work Together
               </Button>
             </motion.div>
 
@@ -156,7 +135,7 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7 }}
+              transition={{ delay: 0.8 }}
               className="flex gap-3 sm:gap-4 justify-center sm:justify-start"
             >
               <Button
@@ -175,14 +154,13 @@ export default function Hero() {
               >
                 <LinkedInIcon className="h-5 w-5" />
               </Button>
-              <Button
-                size="icon"
-                variant="ghost"
-                onClick={() => window.location.href = `mailto:${personalInfo.email}`}
-                className="hover:text-blue-500"
+              <button
+                onClick={() => scrollToSection("contact")}
+                className="inline-flex items-center justify-center h-10 w-10 rounded-md hover:bg-accent hover:text-blue-500 transition-colors"
+                title="Contact me"
               >
                 <Mail className="h-5 w-5" />
-              </Button>
+              </button>
             </motion.div>
           </motion.div>
 

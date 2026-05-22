@@ -219,7 +219,7 @@ export default function About() {
                 <div className="space-y-1.5 sm:space-y-2">
                   <div className="flex items-center justify-between">
                     <span className="text-[9px] sm:text-[10px] text-gray-400">Projects</span>
-                    <span className="text-sm sm:text-base font-bold text-blue-400">12+</span>
+                    <span className="text-sm sm:text-base font-bold text-blue-400">40+</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-[9px] sm:text-[10px] text-gray-400">Repos</span>
@@ -314,7 +314,7 @@ export default function About() {
               className="grid grid-cols-3 gap-4 pt-6"
             >
               <Card className="p-6 text-center hover:border-blue-500 transition-colors">
-                <div className="text-3xl font-bold text-blue-500 mb-2">12+</div>
+                <div className="text-3xl font-bold text-blue-500 mb-2">40+</div>
                 <div className="text-sm text-gray-400">Projects Built</div>
               </Card>
               <Card className="p-6 text-center hover:border-purple-500 transition-colors">

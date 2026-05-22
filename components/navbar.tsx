@@ -56,8 +56,8 @@ export default function Navbar() {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-gray-950/80 backdrop-blur-lg border-b border-gray-800 shadow-lg"
-          : "bg-transparent"
+          ? "bg-gray-950/95 backdrop-blur-xl border-b border-gray-800 shadow-2xl"
+          : "bg-gray-950/90 backdrop-blur-lg border-b border-gray-800/50 shadow-lg"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -75,9 +75,22 @@ export default function Navbar() {
                 e.preventDefault()
                 scrollToSection("#home")
               }}
-              className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent"
+              className="flex items-center gap-2 sm:gap-3"
             >
-              Anam Shergill
+              {/* Logo Image */}
+              <img 
+                src="/projects/logo.png" 
+                alt="Anam Dev Studio" 
+                className="h-12 w-12 sm:h-12 sm:w-12 object-contain"
+                onError={(e) => {
+                  // Hide image if not found
+                  e.currentTarget.style.display = 'none'
+                }}
+              />
+              {/* Brand Name */}
+              <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                Anam Dev Studio
+              </span>
             </a>
           </motion.div>
 

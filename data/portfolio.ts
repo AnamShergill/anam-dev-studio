@@ -3,11 +3,12 @@ export const personalInfo = {
   role: "Full-Stack & AI Web Developer",
   tagline: "Building modern, fast and SEO-focused web experiences",
   description: "Passionate full-stack developer crafting beautiful web applications with cutting-edge technologies. Specialized in React, Next.js, Node.js, and AI-powered solutions.",
-  email: "anamzeeshanshergill@gmail.com",
+  email: "dev_studio@yahoo.com",
   location: "Pakistan",
   availability: "Available for Freelance",
   github: "https://github.com/AnamShergill",
   linkedin: "https://www.linkedin.com/in/anam-zeeshan-shergill1986/",
+  facebook: "https://www.facebook.com/share/1KYcoRzuTd/",
   resume: "/resume.pdf"
 }
 
@@ -72,7 +73,7 @@ export const projects: Project[] = [
     id: 1,
     title: "Personal AI Employee",
     description: "A futuristic AI-powered virtual employee platform designed to automate workflows, assist with productivity tasks, simulate intelligent business interactions, and showcase modern AI-driven automation concepts.",
-    image: "/projects/ai-employee.jpg",
+    image: "/projects/ai-employee.jpeg",
     tags: ["Python", "Streamlit", "AI APIs", "Prompt Engineering", "Automation Workflows", "Conversational AI"],
     category: "AI Application",
     featured: true,
@@ -176,7 +177,7 @@ export const projects: Project[] = [
     id: 7,
     title: "AI Todo Chatbot - Kubernetes Deployment",
     description: "An AI-powered productivity chatbot application deployed using Docker and Kubernetes, featuring scalable containerized architecture, cloud-native deployment workflows, and modern DevOps practices.",
-    image: "/projects/ai-todo.jpg",
+    image: "/projects/ai-chat.png",
     tags: ["Python", "Streamlit", "Docker", "Kubernetes", "AI APIs", "DevOps"],
     category: "AI Infrastructure",
     isAI: true,
@@ -213,7 +214,7 @@ export const projects: Project[] = [
     image: "/projects/password-strenght.png",
     tags: ["Python", "Streamlit"],
     category: "Utility Tool",
-    liveUrl: "https://password-strength-checker-murex-three.vercel.app/",
+    liveUrl: "https://password-strength-checker-by-anam.streamlit.app/",
     githubUrl: "https://github.com/AnamShergill/password-checker",
     highlights: [
       "Real-time validation",
@@ -345,21 +346,21 @@ export const learning = [
 
 export const testimonials = [
   {
-    name: "John Doe",
-    role: "CEO at TechCorp",
-    content: "Outstanding work! The website exceeded our expectations. Professional, responsive, and delivered on time.",
+    name: "Mehmood Ghulam",
+    role: "Proprietor/Owner at Khan Fish Supplier",
+    content: "Anam created an outstanding website for Khan Fish Supplier. The design is clean, professional, and perfectly represents our business. Our online presence has significantly improved, and we're getting more inquiries from customers. Highly recommend her work!",
     avatar: "/avatars/avatar1.jpg"
   },
   {
-    name: "Sarah Smith",
-    role: "Product Manager",
-    content: "Incredible attention to detail and modern design sensibility. A pleasure to work with!",
+    name: "Adnan Sultan",
+    role: "Owner at Levy Consultant",
+    content: "Working with Anam was a great experience. She built a professional website for my tax consultancy that perfectly showcases our services. The site is user-friendly, looks modern, and has helped us attract new clients. Excellent attention to detail!",
     avatar: "/avatars/avatar2.jpg"
   },
   {
-    name: "Mike Johnson",
-    role: "Startup Founder",
-    content: "Transformed our vision into a beautiful, functional website. Highly recommended!",
+    name: "Aroon Issac",
+    role: "CEO at Local Lead Response & Glorient Home Care Service",
+    content: "Anam developed a high-converting website for Local Lead Response using GoHighLevel. Her expertise in GHL and understanding of lead generation is impressive. The website has significantly improved our conversion rates. Based in Arizona, we're thrilled with the results!",
     avatar: "/avatars/avatar3.jpg"
   }
 ]

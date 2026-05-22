@@ -731,9 +731,9 @@ export default function Projects() {
                             transition: { duration: 0.4 }
                           }}
                           animate={
-                            // Slow scrolling animation for featured projects
+                            // Slow zoom animation for featured projects
                             (project.featured || project.id === 1 || project.id === 2 || project.id === 5) ? {
-                              y: [0, -20, 0],
+                              scale: [1, 1.05, 1],
                             } : {}
                           }
                           transition={
