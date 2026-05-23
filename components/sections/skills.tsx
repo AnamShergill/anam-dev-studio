@@ -8,6 +8,7 @@ import * as Icons from "lucide-react"
 import AnimatedHeading from "@/components/animated-heading"
 
 const SkillCard = ({ skill, index }: { skill: { name: string; icon: string }; index: number }) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const IconComponent = (Icons as any)[skill.icon] || Icons.Code
 
   return (

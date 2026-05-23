@@ -35,6 +35,7 @@ export default function Learning() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {learning.map((item, index) => {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const IconComponent = (Icons as any)[item.icon] || Icons.Code
 
             return (

@@ -86,9 +86,9 @@ export default function About() {
                 {/* Code Content */}
                 <div className="space-y-0.5 sm:space-y-1 font-mono text-[10px] sm:text-xs">
                   <div className="text-purple-400">const <span className="text-blue-400">profile</span> = {'{'}</div>
-                  <div className="text-gray-400 pl-2 sm:pl-3">name: <span className="text-green-400">'Anam'</span>,</div>
-                  <div className="text-gray-400 pl-2 sm:pl-3">stack: <span className="text-green-400">'Full-Stack'</span>,</div>
-                  <div className="text-gray-400 pl-2 sm:pl-3">passion: <span className="text-green-400">'AI'</span></div>
+                  <div className="text-gray-400 pl-2 sm:pl-3">name: <span className="text-green-400">&apos;Anam&apos;</span>,</div>
+                  <div className="text-gray-400 pl-2 sm:pl-3">stack: <span className="text-green-400">&apos;Full-Stack&apos;</span>,</div>
+                  <div className="text-gray-400 pl-2 sm:pl-3">passion: <span className="text-green-400">&apos;AI&apos;</span></div>
                   <div className="text-purple-400">{'}'}</div>
                 </div>
                 {/* Shimmer effect */}

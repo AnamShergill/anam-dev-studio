@@ -21,14 +21,6 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
-  const [showFormAnimation, setShowFormAnimation] = useState(false)
-
-  // Trigger animation when form comes into view
-  useState(() => {
-    if (isInView) {
-      setTimeout(() => setShowFormAnimation(true), 400)
-    }
-  })
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -37,7 +29,7 @@ export default function Contact() {
     
     try {
       const formDataObj = new FormData(e.currentTarget)
-      const { data, error } = await forminit.submit('w3ceht0mtx9', formDataObj)
+      const { error } = await forminit.submit('w3ceht0mtx9', formDataObj)
 
       if (error) {
         setIsSubmitting(false)
@@ -79,7 +71,7 @@ export default function Contact() {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto"
           >
-            Have a project in mind? Let's work together to create something amazing
+            Have a project in mind? Let&apos;s work together to create something amazing
           </motion.p>
         </div>
 
@@ -92,9 +84,9 @@ export default function Contact() {
             className="space-y-4 sm:space-y-6"
           >
             <div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">Let's talk about everything!</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">Let&apos;s talk about everything!</h3>
               <p className="text-gray-400 mb-6 sm:mb-8 text-sm sm:text-base">
-                Don't like forms? Send me an email or connect with me on social media. 👋
+                Don&apos;t like forms? Send me an email or connect with me on social media. 👋
               </p>
             </div>
 
@@ -237,7 +229,7 @@ export default function Contact() {
                     } : {}}
                     transition={{ delay: 0.8, duration: 0.6, type: "spring" }}
                   >
-                    Let's Build Your Next Project
+                    Let&apos;s Build Your Next Project
                   </motion.h3>
                   <motion.p 
                     className="text-gray-400 text-sm sm:text-base"
@@ -245,7 +237,7 @@ export default function Contact() {
                     animate={isInView ? { opacity: 1 } : {}}
                     transition={{ delay: 0.9, duration: 0.6 }}
                   >
-                    Fill out the form below and I'll get back to you within 24 hours.
+                    Fill out the form below and I&apos;ll get back to you within 24 hours.
                   </motion.p>
                 </div>
                 
@@ -350,7 +342,7 @@ export default function Contact() {
                       animate={{ opacity: 1, y: 0 }}
                       className="p-3 sm:p-4 bg-green-500/10 border border-green-500/20 rounded-lg text-green-400 text-xs sm:text-sm text-center"
                     >
-                      ✓ Message sent successfully! I'll get back to you soon.
+                      ✓ Message sent successfully! I&apos;ll get back to you soon.
                     </motion.div>
                   )}
 

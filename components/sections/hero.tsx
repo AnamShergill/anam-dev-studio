@@ -47,7 +47,7 @@ export default function Hero() {
                 transition={{ delay: 0.3 }}
                 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
               >
-                Hi, I'm{" "}
+                Hi, I&apos;m{" "}
                 <span className="inline-block relative">
                   <motion.span
                     initial={{ opacity: 0, filter: "blur(10px)", y: 20 }}
@@ -127,7 +127,7 @@ export default function Hero() {
                 onClick={() => scrollToSection("contact")}
                 className="w-full sm:w-auto"
               >
-                Let's Work Together
+                Let&apos;s Work Together
               </Button>
             </motion.div>
 
