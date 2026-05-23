@@ -24,13 +24,24 @@
     scroll-margin-top: 80px;
   }
   
-  @media (max-width: 640px) {
+  /* Responsive scroll padding for different screen sizes */
+  @media (max-width: 768px) {
     html {
-      scroll-padding-top: 70px; /* Less space on mobile */
+      scroll-padding-top: 64px; /* Adjust for mobile navbar */
     }
     
     section {
-      scroll-margin-top: 70px;
+      scroll-margin-top: 64px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    html {
+      scroll-padding-top: 56px; /* Even less for very small screens */
+    }
+    
+    section {
+      scroll-margin-top: 56px;
     }
   }
 }
@@ -45,6 +56,18 @@
   button, a {
     min-height: 44px;
     min-width: 44px;
+  }
+  
+  /* Better touch interaction */
+  button, a, [role="button"] {
+    -webkit-tap-highlight-color: rgba(59, 130, 246, 0.2);
+    touch-action: manipulation;
+  }
+  
+  /* Prevent text selection on buttons */
+  button {
+    -webkit-user-select: none;
+    user-select: none;
   }
 }
 
