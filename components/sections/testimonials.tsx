@@ -12,9 +12,9 @@ export default function Testimonials() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div ref={ref} className="text-center mb-12 sm:mb-16">
+    <section className="py-16 md:py-24 w-full min-w-full h-auto relative overflow-x-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full min-w-0">
+        <div ref={ref} className="text-center mb-12">
           <AnimatedHeading 
             highlight="Testimonials"
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4"
@@ -33,7 +33,7 @@ export default function Testimonials() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full min-w-0">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -42,7 +42,7 @@ export default function Testimonials() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -10 }}
             >
-              <Card className="h-full hover:border-blue-500 transition-all group relative overflow-hidden">
+              <Card className="h-full hover:border-blue-500 transition-all group relative overflow-hidden rounded-xl">
                 {/* Animated Gradient Background */}
                 <motion.div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"

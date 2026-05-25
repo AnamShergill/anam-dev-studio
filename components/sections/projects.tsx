@@ -10,29 +10,31 @@ import { GitHubIcon } from "@/components/icons"
 import AnimatedHeading from "@/components/animated-heading"
 import Image from "next/image"
 
-const categories = ["All", "Business", "E-Commerce", "AI Application", "AI Infrastructure", "AI / Robotics", "Frontend", "Productivity", "Utility Tool", "Landing Page"]
+const categories = ["Featured", "All", "Business", "AI Application", "AI Infrastructure", "AI / Robotics", "E-Commerce", "Frontend", "Productivity", "Utility Tool", "Landing Page"]
 
 export default function Projects() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const [activeCategory, setActiveCategory] = useState("All")
+  const [activeCategory, setActiveCategory] = useState("Featured")
 
-  const filteredProjects = activeCategory === "All"
+  const filteredProjects = activeCategory === "Featured"
+    ? projects.filter(project => project.featured)
+    : activeCategory === "All"
     ? projects
     : projects.filter(project => project.category === activeCategory)
 
   return (
-    <section id="projects" className="py-12 sm:py-16 md:py-20 relative overflow-hidden">
+    <section id="projects" className="py-16 md:py-24 w-full min-w-full h-auto relative overflow-x-hidden">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent pointer-events-none" />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full min-w-0">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -91,7 +93,7 @@ export default function Projects() {
         {/* Projects Bento Grid */}
         <motion.div
           layout
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 w-full min-w-0"
         >
           {filteredProjects.map((project, index) => (
             <motion.div
@@ -107,7 +109,7 @@ export default function Projects() {
               }}
               className={project.featured ? "md:col-span-2 lg:col-span-1" : ""}
             >
-              <Card className={`overflow-hidden group transition-all h-full flex flex-col relative hover:shadow-2xl ${
+              <Card className={`overflow-hidden rounded-xl group transition-all h-full flex flex-col relative hover:shadow-2xl ${
                 project.isAIAutomation
                   ? 'border-purple-400/50 hover:border-purple-300 bg-gradient-to-br from-purple-500/10 via-cyan-500/10 to-blue-500/10 hover:shadow-purple-500/20'
                   : project.isCloudNative
@@ -120,17 +122,17 @@ export default function Projects() {
               }`}>
                 {/* EXTREMELY VISIBLE Shimmer Effect for Featured/AI Projects */}
                 {(project.featured || project.isAI || project.isCloudNative || project.isAIAutomation) && (
-                  <div className="absolute inset-0 overflow-hidden pointer-events-none z-[5]">
+                  <div className="absolute inset-0 overflow-hidden pointer-events-none z-[5] opacity-0">
                     <div 
                       className="absolute w-[300%] h-[300%] -top-full -left-full"
                       style={{
                         background: project.isAIAutomation
-                          ? 'linear-gradient(110deg, transparent 20%, rgba(168, 85, 247, 0.9) 45%, rgba(255, 255, 255, 0.9) 50%, rgba(34, 211, 238, 0.9) 55%, transparent 80%)'
+                          ? 'linear-gradient(110deg, transparent 20%, rgba(168, 85, 247, 0.05) 45%, rgba(255, 255, 255, 0.05) 50%, rgba(34, 211, 238, 0.05) 55%, transparent 80%)'
                           : project.isCloudNative
-                          ? 'linear-gradient(110deg, transparent 20%, rgba(34, 211, 238, 0.9) 45%, rgba(255, 255, 255, 0.9) 50%, rgba(34, 211, 238, 0.9) 55%, transparent 80%)'
+                          ? 'linear-gradient(110deg, transparent 20%, rgba(34, 211, 238, 0.05) 45%, rgba(255, 255, 255, 0.05) 50%, rgba(34, 211, 238, 0.05) 55%, transparent 80%)'
                           : project.isRobotics
-                          ? 'linear-gradient(110deg, transparent 20%, rgba(6, 182, 212, 0.9) 45%, rgba(255, 255, 255, 0.9) 50%, rgba(6, 182, 212, 0.9) 55%, transparent 80%)'
-                          : 'linear-gradient(110deg, transparent 20%, rgba(59, 130, 246, 0.9) 45%, rgba(255, 255, 255, 0.9) 50%, rgba(59, 130, 246, 0.9) 55%, transparent 80%)',
+                          ? 'linear-gradient(110deg, transparent 20%, rgba(6, 182, 212, 0.05) 45%, rgba(255, 255, 255, 0.05) 50%, rgba(6, 182, 212, 0.05) 55%, transparent 80%)'
+                          : 'linear-gradient(110deg, transparent 20%, rgba(59, 130, 246, 0.05) 45%, rgba(255, 255, 255, 0.05) 50%, rgba(59, 130, 246, 0.05) 55%, transparent 80%)',
                         animation: 'shimmer-card 4s infinite',
                         filter: 'blur(3px)',
                       }}
@@ -139,11 +141,11 @@ export default function Projects() {
                 )}
 
                 {/* Universal Shimmer Effect for ALL Cards */}
-                <div className="absolute inset-0 overflow-hidden pointer-events-none z-[5] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 overflow-hidden pointer-events-none z-[5] opacity-0 group-hover:opacity-30 transition-opacity duration-300">
                   <div 
                     className="absolute w-[300%] h-[300%] -top-full -left-full"
                     style={{
-                      background: 'linear-gradient(110deg, transparent 20%, rgba(59, 130, 246, 0.7) 45%, rgba(255, 255, 255, 0.8) 50%, rgba(59, 130, 246, 0.7) 55%, transparent 80%)',
+                      background: 'linear-gradient(110deg, transparent 20%, rgba(59, 130, 246, 0.08) 45%, rgba(255, 255, 255, 0.08) 50%, rgba(59, 130, 246, 0.08) 55%, transparent 80%)',
                       animation: 'shimmer-card 4s infinite',
                       filter: 'blur(2px)',
                     }}
@@ -153,9 +155,9 @@ export default function Projects() {
                 {/* Robotics Animated Border */}
                 {project.isRobotics && (
                   <motion.div
-                    className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+                    className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-30 transition-opacity pointer-events-none"
                     style={{
-                      background: "linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.3), transparent)",
+                      background: "linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.1), transparent)",
                       backgroundSize: "200% 100%",
                     }}
                     animate={{
@@ -172,9 +174,9 @@ export default function Projects() {
                 {/* AI Automation Animated Border */}
                 {project.isAIAutomation && (
                   <motion.div
-                    className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+                    className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-30 transition-opacity pointer-events-none"
                     style={{
-                      background: "linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.4), rgba(34, 211, 238, 0.4), transparent)",
+                      background: "linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.15), rgba(34, 211, 238, 0.15), transparent)",
                       backgroundSize: "200% 100%",
                     }}
                     animate={{
@@ -191,9 +193,9 @@ export default function Projects() {
                 {/* Universal Animated Border for ALL Cards */}
                 {!project.isRobotics && !project.isAIAutomation && !project.isCloudNative && (
                   <motion.div
-                    className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+                    className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-30 transition-opacity pointer-events-none"
                     style={{
-                      background: "linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.4), transparent)",
+                      background: "linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.15), transparent)",
                       backgroundSize: "200% 100%",
                     }}
                     animate={{
@@ -210,13 +212,13 @@ export default function Projects() {
                 {/* AI Automation Glow Effect */}
                 {project.isAIAutomation && (
                   <motion.div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                    className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none"
                     animate={{
                       background: [
-                        "radial-gradient(circle at 0% 0%, rgba(168, 85, 247, 0.2), transparent 50%)",
-                        "radial-gradient(circle at 100% 100%, rgba(34, 211, 238, 0.2), transparent 50%)",
-                        "radial-gradient(circle at 0% 100%, rgba(59, 130, 246, 0.2), transparent 50%)",
-                        "radial-gradient(circle at 0% 0%, rgba(168, 85, 247, 0.2), transparent 50%)",
+                        "radial-gradient(circle at 0% 0%, rgba(168, 85, 247, 0.05), transparent 50%)",
+                        "radial-gradient(circle at 100% 100%, rgba(34, 211, 238, 0.05), transparent 50%)",
+                        "radial-gradient(circle at 0% 100%, rgba(59, 130, 246, 0.05), transparent 50%)",
+                        "radial-gradient(circle at 0% 0%, rgba(168, 85, 247, 0.05), transparent 50%)",
                       ],
                     }}
                     transition={{
@@ -230,12 +232,12 @@ export default function Projects() {
                 {/* AI Glow Effect */}
                 {project.isAI && !project.isRobotics && !project.isAIAutomation && (
                   <motion.div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                    className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none"
                     animate={{
                       background: [
-                        "radial-gradient(circle at 0% 0%, rgba(168, 85, 247, 0.15), transparent 50%)",
-                        "radial-gradient(circle at 100% 100%, rgba(59, 130, 246, 0.15), transparent 50%)",
-                        "radial-gradient(circle at 0% 0%, rgba(168, 85, 247, 0.15), transparent 50%)",
+                        "radial-gradient(circle at 0% 0%, rgba(168, 85, 247, 0.05), transparent 50%)",
+                        "radial-gradient(circle at 100% 100%, rgba(59, 130, 246, 0.05), transparent 50%)",
+                        "radial-gradient(circle at 0% 0%, rgba(168, 85, 247, 0.05), transparent 50%)",
                       ],
                     }}
                     transition={{
@@ -249,12 +251,12 @@ export default function Projects() {
                 {/* Universal Glow Effect for ALL Other Cards */}
                 {!project.isAI && !project.isRobotics && !project.isCloudNative && !project.isAIAutomation && (
                   <motion.div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                    className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none"
                     animate={{
                       background: [
-                        "radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.15), transparent 50%)",
-                        "radial-gradient(circle at 100% 100%, rgba(147, 51, 234, 0.15), transparent 50%)",
-                        "radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.15), transparent 50%)",
+                        "radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.05), transparent 50%)",
+                        "radial-gradient(circle at 100% 100%, rgba(147, 51, 234, 0.05), transparent 50%)",
+                        "radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.05), transparent 50%)",
                       ],
                     }}
                     transition={{
@@ -388,17 +390,6 @@ export default function Projects() {
                 {project.featured && (
                   <div className="absolute top-4 right-4 z-10">
                     <div className="flex items-center gap-1 px-3 py-1 rounded-full bg-yellow-500/20 border border-yellow-500/30 backdrop-blur-sm relative overflow-hidden">
-                      {/* EXTREMELY VISIBLE Shimmer */}
-                      <span 
-                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent"
-                        style={{
-                          animation: 'shimmer 4s infinite',
-                          transform: 'translateX(-100%) skewX(-20deg)',
-                          width: '200%',
-                          opacity: 0.8,
-                          filter: 'blur(1px)',
-                        }}
-                      />
                       <Star className="h-3 w-3 text-yellow-500 fill-yellow-500 relative z-10" />
                       <span className="text-xs font-semibold text-yellow-500 relative z-10">Featured</span>
                     </div>
@@ -411,9 +402,9 @@ export default function Projects() {
                     <motion.div
                       animate={{
                         boxShadow: [
-                          "0 0 20px rgba(168, 85, 247, 0.3)",
-                          "0 0 30px rgba(168, 85, 247, 0.5)",
-                          "0 0 20px rgba(168, 85, 247, 0.3)",
+                          "0 0 5px rgba(168, 85, 247, 0.1)",
+                          "0 0 8px rgba(168, 85, 247, 0.15)",
+                          "0 0 5px rgba(168, 85, 247, 0.1)",
                         ],
                       }}
                       transition={{
@@ -423,17 +414,6 @@ export default function Projects() {
                       }}
                       className="flex items-center gap-1 px-3 py-1 rounded-full bg-purple-500/20 border border-purple-500/40 backdrop-blur-sm relative overflow-hidden"
                     >
-                      {/* EXTREMELY VISIBLE Shimmer */}
-                      <span 
-                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent"
-                        style={{
-                          animation: 'shimmer 4s infinite',
-                          transform: 'translateX(-100%) skewX(-20deg)',
-                          width: '200%',
-                          opacity: 0.8,
-                          filter: 'blur(1px)',
-                        }}
-                      />
                       <span className="text-xs font-semibold text-purple-400 relative z-10">🤖 AI Powered</span>
                     </motion.div>
                   </div>
@@ -453,20 +433,20 @@ export default function Projects() {
                           animate={{
                             boxShadow: [
                               badge === "AI Powered" 
-                                ? "0 0 20px rgba(168, 85, 247, 0.4)"
+                                ? "0 0 5px rgba(168, 85, 247, 0.1)"
                                 : badge === "Automation"
-                                ? "0 0 20px rgba(34, 211, 238, 0.4)"
-                                : "0 0 20px rgba(59, 130, 246, 0.4)",
+                                ? "0 0 5px rgba(34, 211, 238, 0.1)"
+                                : "0 0 5px rgba(59, 130, 246, 0.1)",
                               badge === "AI Powered"
-                                ? "0 0 35px rgba(168, 85, 247, 0.6)"
+                                ? "0 0 8px rgba(168, 85, 247, 0.15)"
                                 : badge === "Automation"
-                                ? "0 0 35px rgba(34, 211, 238, 0.6)"
-                                : "0 0 35px rgba(59, 130, 246, 0.6)",
+                                ? "0 0 8px rgba(34, 211, 238, 0.15)"
+                                : "0 0 8px rgba(59, 130, 246, 0.15)",
                               badge === "AI Powered"
-                                ? "0 0 20px rgba(168, 85, 247, 0.4)"
+                                ? "0 0 5px rgba(168, 85, 247, 0.1)"
                                 : badge === "Automation"
-                                ? "0 0 20px rgba(34, 211, 238, 0.4)"
-                                : "0 0 20px rgba(59, 130, 246, 0.4)",
+                                ? "0 0 5px rgba(34, 211, 238, 0.1)"
+                                : "0 0 5px rgba(59, 130, 246, 0.1)",
                             ],
                           }}
                           transition={{
@@ -483,17 +463,6 @@ export default function Projects() {
                               : "bg-gradient-to-r from-blue-500/30 to-blue-600/30 border border-blue-400/50"
                           }`}
                         >
-                          {/* EXTREMELY VISIBLE Shimmer */}
-                          <span 
-                            className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent"
-                            style={{
-                              animation: 'shimmer 4s infinite',
-                              transform: 'translateX(-100%) skewX(-20deg)',
-                              width: '200%',
-                              opacity: 0.85,
-                              filter: 'blur(1px)',
-                            }}
-                          />
                           <motion.span
                             animate={{ 
                               rotate: badge === "AI Powered" ? [0, 360] : 0,
@@ -529,9 +498,9 @@ export default function Projects() {
                     <motion.div
                       animate={{
                         boxShadow: [
-                          "0 0 20px rgba(6, 182, 212, 0.4)",
-                          "0 0 35px rgba(6, 182, 212, 0.6)",
-                          "0 0 20px rgba(6, 182, 212, 0.4)",
+                          "0 0 5px rgba(6, 182, 212, 0.1)",
+                          "0 0 8px rgba(6, 182, 212, 0.15)",
+                          "0 0 5px rgba(6, 182, 212, 0.1)",
                         ],
                       }}
                       transition={{
@@ -541,17 +510,6 @@ export default function Projects() {
                       }}
                       className="flex items-center gap-1 px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-400/50 backdrop-blur-sm relative overflow-hidden"
                     >
-                      {/* EXTREMELY VISIBLE Shimmer */}
-                      <span 
-                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent"
-                        style={{
-                          animation: 'shimmer 4s infinite',
-                          transform: 'translateX(-100%) skewX(-20deg)',
-                          width: '200%',
-                          opacity: 0.8,
-                          filter: 'blur(1px)',
-                        }}
-                      />
                       <motion.span
                         animate={{ rotate: [0, 360] }}
                         transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
@@ -570,9 +528,9 @@ export default function Projects() {
                     <motion.div
                       animate={{
                         boxShadow: [
-                          "0 0 25px rgba(34, 211, 238, 0.5)",
-                          "0 0 40px rgba(34, 211, 238, 0.7)",
-                          "0 0 25px rgba(34, 211, 238, 0.5)",
+                          "0 0 5px rgba(34, 211, 238, 0.1)",
+                          "0 0 8px rgba(34, 211, 238, 0.15)",
+                          "0 0 5px rgba(34, 211, 238, 0.1)",
                         ],
                       }}
                       transition={{
@@ -582,17 +540,6 @@ export default function Projects() {
                       }}
                       className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-to-r from-cyan-500/30 to-blue-500/30 border border-cyan-300/60 backdrop-blur-sm relative overflow-hidden"
                     >
-                      {/* EXTREMELY VISIBLE Shimmer */}
-                      <span 
-                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent"
-                        style={{
-                          animation: 'shimmer 4s infinite',
-                          transform: 'translateX(-100%) skewX(-20deg)',
-                          width: '200%',
-                          opacity: 0.9,
-                          filter: 'blur(1px)',
-                        }}
-                      />
                       <motion.span
                         animate={{ 
                           scale: [1, 1.2, 1],

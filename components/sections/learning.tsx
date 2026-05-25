@@ -12,9 +12,9 @@ export default function Learning() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="learning" className="py-12 sm:py-16 md:py-20 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div ref={ref} className="text-center mb-12 sm:mb-16">
+    <section id="learning" className="py-16 md:py-24 w-full min-w-full h-auto relative overflow-x-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full min-w-0">
+        <div ref={ref} className="text-center mb-12">
           <AnimatedHeading 
             highlight="Learning"
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4"
@@ -33,7 +33,7 @@ export default function Learning() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full min-w-0">
           {learning.map((item, index) => {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const IconComponent = (Icons as any)[item.icon] || Icons.Code

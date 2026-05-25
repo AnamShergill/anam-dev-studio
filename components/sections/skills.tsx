@@ -19,7 +19,7 @@ const SkillCard = ({ skill, index }: { skill: { name: string; icon: string }; in
       viewport={{ once: true }}
       whileHover={{ scale: 1.1, y: -10 }}
     >
-      <Card className="p-4 sm:p-6 text-center hover:border-blue-500 transition-all group cursor-pointer relative overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-blue-500/30 border-2 border-transparent hover:border-blue-500/50">
+      <Card className="p-4 sm:p-6 text-center hover:border-blue-500 transition-all group cursor-pointer relative overflow-hidden rounded-xl shadow-xl hover:shadow-2xl hover:shadow-blue-500/30 border-2 border-transparent hover:border-blue-500/50">
         {/* Animated gradient background - MORE INTENSE */}
         <motion.div
           className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -111,14 +111,14 @@ export default function Skills() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="skills" className="py-12 sm:py-16 md:py-20 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="py-16 md:py-24 w-full min-w-full h-auto relative overflow-x-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full min-w-0">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <AnimatedHeading 
             highlight="Technologies"
@@ -149,7 +149,7 @@ export default function Skills() {
               <div className="w-1 h-6 sm:h-8 bg-gradient-to-b from-blue-500 to-purple-600 rounded-full" />
               Frontend Development
             </motion.h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-8 w-full min-w-0">
               {skills.frontend.map((skill, index) => (
                 <SkillCard key={skill.name} skill={skill} index={index} />
               ))}
@@ -167,7 +167,7 @@ export default function Skills() {
               <div className="w-1 h-6 sm:h-8 bg-gradient-to-b from-purple-500 to-pink-600 rounded-full" />
               Backend & Database
             </motion.h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 w-full min-w-0">
               {skills.backend.map((skill, index) => (
                 <SkillCard key={skill.name} skill={skill} index={index} />
               ))}
@@ -185,7 +185,7 @@ export default function Skills() {
               <div className="w-1 h-6 sm:h-8 bg-gradient-to-b from-pink-500 to-orange-600 rounded-full" />
               AI & Python
             </motion.h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 w-full min-w-0">
               {skills.ai.map((skill, index) => (
                 <SkillCard key={skill.name} skill={skill} index={index} />
               ))}

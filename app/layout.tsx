@@ -39,8 +39,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="overflow-x-hidden">
+      <body className={`${inter.className} min-h-screen w-full overflow-x-hidden bg-gray-950`}>{children}</body>
     </html>
   )
 }

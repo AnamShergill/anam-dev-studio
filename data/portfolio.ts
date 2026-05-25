@@ -109,7 +109,7 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    title: "Levy Consultant Tax Firm",
+    title: "Tax Consultant Firm Website",
     description: "A professional tax consultancy and financial services website built with a clean business-focused interface, responsive layouts, and structured service sections designed to improve trust and user experience.",
     image: "/projects/levy-tax.png",
     tags: ["HTML", "CSS", "JavaScript", "Responsive Design"],
@@ -131,6 +131,7 @@ export const projects: Project[] = [
     image: "/projects/khan-fish.png",
     tags: ["HTML", "CSS", "JavaScript"],
     category: "Business",
+    featured: true,
     liveUrl: "https://www.khanfishsupplier.com/",
     githubUrl: "https://github.com/AnamShergill/khan-fish-supplier",
     highlights: [
@@ -158,12 +159,28 @@ export const projects: Project[] = [
   },
   {
     id: 6,
+    title: "Local Lead Response - GHL Website",
+    description: "A high-converting lead generation website built on GoHighLevel platform for Local Lead Response, optimized for capturing and converting local business leads with automated follow-up systems.",
+    image: "/projects/lead-response.png",
+    tags: ["GoHighLevel", "Lead Generation", "Conversion Optimization", "Marketing Automation"],
+    category: "Business",
+    featured: true,
+    liveUrl: "https://sites.leadconnectorhq.com/preview/vUmgBLb12XCUamkZEvHY",
+    githubUrl: "https://github.com/AnamShergill/local-lead-response",
+    highlights: [
+      "Designed a high-converting landing page optimized for local lead generation and automated follow-ups",
+      "Integrated optimized lead-capture systems that streamlined inbound client queries",
+      "Built on GoHighLevel platform for seamless CRM integration",
+      "Conversion-focused design with clear CTAs"
+    ]
+  },
+  {
+    id: 7,
     title: "Hackathon E-Commerce Website",
     description: "A responsive e-commerce web application developed during a hackathon focusing on rapid UI development, scalable layouts, and modern frontend implementation.",
     image: "/projects/e-commerce.png",
-    tags: ["React", "Tailwind CSS", "JavaScript"],
+    tags: ["React", "Tailwind CSS", "JavaScript", "E-Commerce"],
     category: "E-Commerce",
-    featured: true,
     liveUrl: "https://hackathon-e-commerce-website-liard.vercel.app/",
     githubUrl: "https://github.com/AnamShergill/hackathon-ecommerce",
     highlights: [
@@ -174,7 +191,7 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: 7,
+    id: 8,
     title: "AI Todo Chatbot - Kubernetes Deployment",
     description: "An AI-powered productivity chatbot application deployed using Docker and Kubernetes, featuring scalable containerized architecture, cloud-native deployment workflows, and modern DevOps practices.",
     image: "/projects/ai-chat.png",
@@ -192,7 +209,7 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: 8,
+    id: 9,
     title: "Modern Charity Website",
     description: "A charity-focused responsive website designed with modern Bootstrap layouts, accessibility-focused sections, and clean UI components optimized for multiple devices.",
     image: "/projects/charity.png",
@@ -208,10 +225,10 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: 9,
+    id: 10,
     title: "Password Strength Checker",
     description: "A password validation and security-focused utility application designed to analyze password strength, improve security awareness, and provide real-time feedback to users.",
-    image: "/projects/password-strenght.png",
+    image: "/projects/password-strength.png",
     tags: ["Python", "Streamlit"],
     category: "Utility Tool",
     liveUrl: "https://password-strength-checker-by-anam.streamlit.app/",
@@ -224,7 +241,7 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: 10,
+    id: 11,
     title: "Food Recipe Website",
     description: "A modern food and recipe website designed with engaging content sections, recipe-focused layouts, responsive cards, and user-friendly browsing experience.",
     image: "/projects/food-recipe.png",
@@ -240,7 +257,7 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: 11,
+    id: 12,
     title: "Growth Mindset Challenge",
     description: "An interactive personal development application focused on motivation, self-improvement, and productivity through engaging growth mindset challenges and user interaction.",
     image: "/projects/growth-mindset.png",
@@ -256,7 +273,7 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: 12,
+    id: 13,
     title: "Mobile Landing Page",
     description: "A responsive mobile-inspired landing page project focused on layout structuring, clean UI hierarchy, and mobile-first frontend design principles.",
     image: "/projects/mobile.png",
@@ -353,7 +370,7 @@ export const testimonials = [
   },
   {
     name: "Adnan Sultan",
-    role: "Owner at Levy Consultant",
+    role: "Owner at Tax Consultant Firm",
     content: "Working with Anam was a great experience. She built a professional website for my tax consultancy that perfectly showcases our services. The site is user-friendly, looks modern, and has helped us attract new clients. Excellent attention to detail!",
     avatar: "/avatars/avatar2.jpg"
   },

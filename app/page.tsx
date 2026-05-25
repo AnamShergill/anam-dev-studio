@@ -17,9 +17,9 @@ export default function Home() {
     <>
       <LoadingScreen />
       <ScrollProgress />
-      <div className="min-h-screen bg-gray-950 text-white">
+      <div className="min-h-screen w-full">
         <Navbar />
-        <main>
+        <main className="w-full">
           <Hero />
           <About />
           <Skills />
