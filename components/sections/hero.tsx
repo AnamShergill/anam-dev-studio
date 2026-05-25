@@ -12,21 +12,21 @@ export default function Hero() {
   }
 
   return (
-    <section id="home" className="h-auto md:min-h-screen flex items-center justify-center relative overflow-x-hidden pt-20 sm:pt-16 px-4 w-full">
+    <section id="home" className="h-auto md:min-h-screen flex items-center justify-center relative overflow-x-hidden pt-20 sm:pt-16 w-full">
       {/* Animated Background */}
       <div className="absolute inset-0 -z-10 overflow-x-hidden">
         <div className="absolute top-1/4 left-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-1/4 right-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 w-full min-w-0">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 w-full min-w-0">
         <div className="grid lg:grid-cols-2 gap-8 items-center w-full min-w-0">
           {/* Left Side - Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-6 sm:space-y-8 text-center sm:text-left"
+            className="space-y-6 sm:space-y-8 text-center lg:text-left w-full flex flex-col items-center lg:items-start"
           >
             {/* Availability Badge */}
             <motion.div
@@ -111,7 +111,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
-              className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4"
+              className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 w-full sm:w-auto justify-center lg:justify-start"
             >
               <Button
                 size="lg"
@@ -136,7 +136,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
-              className="flex gap-3 sm:gap-4 justify-center sm:justify-start"
+              className="flex gap-3 sm:gap-4 justify-center lg:justify-start"
             >
               <Button
                 size="icon"

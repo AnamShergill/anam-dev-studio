@@ -24,7 +24,7 @@ export default function Projects() {
     : projects.filter(project => project.category === activeCategory)
 
   return (
-    <section id="projects" className="py-16 md:py-24 w-full min-w-full h-auto relative overflow-x-hidden">
+    <section id="projects" className="py-10 md:py-18 w-full min-w-full h-auto relative overflow-x-hidden">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent pointer-events-none" />
       
