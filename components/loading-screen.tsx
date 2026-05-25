@@ -31,7 +31,7 @@ export default function LoadingScreen() {
               className="mb-8"
             >
               <h1 className="text-6xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                Anam Shergill
+                Hi, I am Anam ! ✨
               </h1>
             </motion.div>
 

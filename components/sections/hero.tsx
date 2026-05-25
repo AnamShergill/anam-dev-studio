@@ -47,7 +47,7 @@ export default function Hero() {
                 transition={{ delay: 0.3 }}
                 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
               >
-                Hi, I&apos;m{" "}
+                Welcome to{" "}
                 <span className="inline-block relative">
                   <motion.span
                     initial={{ opacity: 0, filter: "blur(10px)", y: 20 }}
@@ -77,7 +77,7 @@ export default function Hero() {
                         display: "inline-block",
                       }}
                     >
-                      Anam Shergill
+                      Anam Dev Studio
                     </motion.span>
                   </motion.span>
                   {/* Subtle glow effect */}
