@@ -4,7 +4,7 @@ export const personalInfo = {
   tagline: "Building modern, fast and SEO-focused web experiences",
   description: "Passionate full-stack developer crafting beautiful web applications with cutting-edge technologies. Specialized in React, Next.js, Node.js, and AI-powered solutions.",
   email: "dev_studio@yahoo.com",
-  location: "Pakistan",
+  location: "Work Remotely",
   availability: "Available for Freelance",
   github: "https://github.com/AnamShergill",
   linkedin: "https://www.linkedin.com/in/anam-zeeshan-shergill1986/",

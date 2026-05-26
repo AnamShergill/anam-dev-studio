@@ -54,7 +54,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-10 md:py-18 w-full min-w-full h-auto relative overflow-x-hidden">
+    <section id="contact" className="py-8 md:py-16 w-full min-w-full h-auto relative overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full min-w-0">
         <div ref={ref} className="text-center mb-12">
           <AnimatedHeading 
