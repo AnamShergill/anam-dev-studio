@@ -165,7 +165,7 @@ export const projects: Project[] = [
     tags: ["GoHighLevel", "Lead Generation", "Conversion Optimization", "Marketing Automation"],
     category: "Business",
     featured: true,
-    liveUrl: "https://sites.leadconnectorhq.com/preview/vUmgBLb12XCUamkZEvHY",
+    liveUrl: "https://local-lead-response-busniess-websit.vercel.app/",
     githubUrl: "https://github.com/AnamShergill/local-lead-response",
     highlights: [
       "Designed a high-converting landing page optimized for local lead generation and automated follow-ups",
